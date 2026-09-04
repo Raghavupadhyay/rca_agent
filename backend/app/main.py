@@ -16,7 +16,7 @@ from pydantic import BaseModel
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
-from backend.agent import build_agent, extract_context_from_messages
+from backend.app.agent import build_agent, extract_context_from_messages
 
 # Initialize globals
 app_state = {
@@ -36,13 +36,15 @@ class ChatResponse(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Setup MCP client
-    docs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "docs"))
+    docs_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "docs")
+    )
     
     # Initialize the MCP Client with the Filesystem server configuration
     mcp_client = MultiServerMCPClient({
         "filesystem": {
             "transport": "stdio",
-            "command": "npx",
+            "command": "/usr/bin/npx",
             "args": [
                 "-y", 
                 "@modelcontextprotocol/server-filesystem", 
@@ -80,7 +82,7 @@ HTML_CONTENT = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loadshare RCA Agent</title>
+    <title>Darkstore RCA Agent</title>
     <style>
         body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         #chat { border: 1px solid #ccc; height: 400px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
@@ -95,7 +97,7 @@ HTML_CONTENT = """
     </style>
 </head>
 <body>
-    <h1>Loadshare RCA Agent</h1>
+    <h1>Darkstore RCA Agent</h1>
     <div id="chat"></div>
     <div id="input-area">
         <input type="text" id="msg-input" placeholder="Ask about store performance (e.g., 'How did Bangalore do on 2026-04-22?')">

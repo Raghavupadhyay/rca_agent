@@ -9,7 +9,7 @@ The agent calls these functions and renders the returned dicts into natural lang
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
-from backend.database import query, query_one, TABLE_NAME
+from backend.app.database import query, query_one, TABLE_NAME
 
 # ---------------------------------------------------------------------------
 # Thresholds (source of truth — match amazon_rca_logic.md exactly)

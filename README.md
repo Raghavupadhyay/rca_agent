@@ -89,6 +89,3 @@ The agent attributes performance issues to four primary buckets:
 4.  **Utilization Gap**: Rider man-hour ratio is `< 0.85` (often due to no-shows).
 
 **Note**: Root causes are only analyzed for "Problem Hours" where the `avg_or2a` exceeds the defined SLA threshold (default: 0 min).
-
-## 📄 License
-Internal Loadshare Operations Tool.

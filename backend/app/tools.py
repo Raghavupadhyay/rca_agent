@@ -15,8 +15,8 @@ from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from typing import Optional
 
-from backend import rca_logic
-from backend.database import query, TABLE_NAME
+from backend.app import rca_logic
+from backend.app.database import query, TABLE_NAME
 
 
 # ---------------------------------------------------------------------------

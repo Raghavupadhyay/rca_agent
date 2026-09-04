@@ -18,13 +18,13 @@ from langgraph.graph import StateGraph, END
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode
 
-from backend.tools import ALL_TOOLS
+from backend.app.tools import ALL_TOOLS
 
 # ---------------------------------------------------------------------------
 # System prompt
 # ---------------------------------------------------------------------------
 
-SYSTEM_PROMPT = """You are an operations analyst agent for Loadshare's quick-commerce delivery operations.
+SYSTEM_PROMPT = """You are an operations analyst agent for Darkstore's quick-commerce delivery operations.
 You help ops users understand store performance and diagnose why OR2A SLAs were breached on a given date.
 
 ## Your Role

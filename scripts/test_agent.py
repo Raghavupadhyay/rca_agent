@@ -4,7 +4,7 @@ from langchain_core.messages import HumanMessage
 
 # Add the project root to sys.path so we can import from backend
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from backend.agent import build_agent, extract_context_from_messages
+from backend.app.agent import build_agent, extract_context_from_messages
 
 def load_env(filepath=".env"):
     """Simple parser to load .env without requiring python-dotenv"""
